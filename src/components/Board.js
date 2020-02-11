@@ -5,29 +5,18 @@ const Board = (props) => {
     const renderSquare = (i) => {
         return (
             <Square
+                key={i}
                 value={props.squares[i]}
                 onClick={() => props.onClick(i)}
             />
         );
     };
 
+    const renderedBoard = props.squares.map((square, index) => renderSquare(index));
+
     return (
         <div className="board">
-            <div className="board-row">
-                {renderSquare(0)}
-                {renderSquare(1)}
-                {renderSquare(2)}
-            </div>
-            <div className="board-row">
-                {renderSquare(3)}
-                {renderSquare(4)}
-                {renderSquare(5)}
-            </div>
-            <div className="board-row">
-                {renderSquare(6)}
-                {renderSquare(7)}
-                {renderSquare(8)}
-            </div>
+            {renderedBoard}
         </div>
     );
 };

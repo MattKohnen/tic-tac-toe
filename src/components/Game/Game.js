@@ -8,7 +8,7 @@ import getHistory from './getHistory';
 
 const Game = (props) => {
     // State management
-    const [history, setHistory] = useState([{squares: Array(9).fill(null),}]);
+    const [history, setHistory] = useState([{squares: Array(9).fill(null), moves: []}]);
     const [stepNumber, setStepNumber] = useState(0);
     const [xIsNext, setXIsNext] = useState(true);
     // ES6 Prop Shorthand
