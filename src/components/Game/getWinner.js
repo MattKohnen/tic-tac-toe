@@ -1,4 +1,4 @@
-const calculateWinner = (squares) => {
+const getWinner = (squares) => {
     const lines = [
         [0, 1, 2],
         [3, 4, 5],
@@ -18,4 +18,4 @@ const calculateWinner = (squares) => {
     return null;
 };
 
-export {calculateWinner};
+export default getWinner;
