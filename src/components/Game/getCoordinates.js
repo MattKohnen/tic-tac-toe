@@ -17,7 +17,7 @@ const getCoordinates = (squares, square) => {
             row = 3;
         }
 
-        return {col: col, row: row}
+        return {col: col, row: row};
     });
 
     return coordinates[square];

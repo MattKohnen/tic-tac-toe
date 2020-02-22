@@ -1,7 +1,7 @@
-import getWinner from './getWinner';
+import getWinner from '../Game/getWinner';
 
-const getStatus = (current, xIsNext) => {
-    const winner = getWinner(current.squares);
+const getStatus = (squares, xIsNext) => {
+    const winner = getWinner(squares);
     let status = {
         label: null,
         player: null,

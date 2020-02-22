@@ -1,5 +1,5 @@
 const getWinner = (squares) => {
-    const lines = [
+    const solutions = [
         [0, 1, 2],
         [3, 4, 5],
         [6, 7, 8],
@@ -9,8 +9,8 @@ const getWinner = (squares) => {
         [0, 4, 8],
         [2, 4, 6],
     ];
-    for (let i = 0; i < lines.length; i++) {
-        const [a, b, c] = lines[i];
+    for (let i = 0; i < solutions.length; i++) {
+        const [a, b, c] = solutions[i];
         if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
             return squares[a];
         }

@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import Status from '../Status';
-import getStatus from './getStatus';
-import Board from '../Board';
-import handleClick from './handleClick';
-import History from '../History';
-import getHistory from './getHistory';
+import Status from '../Status/Status';
+import getStatus from '../Status/getStatus';
+import Board from '../Board/Board';
+import handleSquareClick from '../Square/handleSquareClick';
+import History from '../History/History';
+import handleHistoryItemClick from '../HistoryItem/handleHistoryItemClick';
 
 const Game = (props) => {
     // State management
@@ -22,26 +22,28 @@ const Game = (props) => {
     };
     // END state management
 
-    const current = history[stepNumber]; // Current history object
+    const squares = history[stepNumber].squares;// Extract out the `squares` array from the most current history object
+    const status = getStatus(squares, xIsNext);
 
     return (
         <div className="game">
             <div className="game-info">
                 <Status
-                    status={getStatus(current, xIsNext)}
+                    status={status}
                 />
             </div>
 
             <div className="game-board">
                 <Board
-                    squares={current.squares} // Extract out the `squares` array from the most current history object
-                    onClick={(i) => handleClick(gameState, i)}
+                    squares={squares}
+                    onClick={(i) => handleSquareClick(gameState, i)}
                 />
             </div>
 
             <div className="game-info">
                 <History
-                    moves={getHistory(gameState)}
+                    history={history}
+                    onClick={(i) => handleHistoryItemClick(setStepNumber, setXIsNext, i)}
                 />
             </div>
         </div>
