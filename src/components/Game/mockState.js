@@ -2,7 +2,7 @@ const initialState = {
     history: [
         {
             squares: Array(9).fill(null),
-            moves: []
+            moves: [],
         }
     ],
     stepNumber: 0,

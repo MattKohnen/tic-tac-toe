@@ -7,7 +7,7 @@ const History = (props) => {
         <div className="history">
             <p>History:</p>
             <ol>
-                {renderHistoryList(props.history, props.onClick, renderHistoryItem)}
+                {renderHistoryList(props.history, props.onClick, renderHistoryItem, props.stepNumber)}
             </ol>
         </div>
     );

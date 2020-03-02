@@ -1,11 +1,12 @@
 import React from 'react';
 import HistoryItem from './HistoryItem';
 
-const renderHistoryItem = (onClick, index, desc) => {
+const renderHistoryItem = (onClick, index, currentMove, buttonText) => {
     return (
         <HistoryItem
-            value={desc}
             onClick={() => onClick(index)}
+            currentMove={currentMove}
+            value={buttonText}
         />
     );
 };

@@ -8,8 +8,15 @@ import handleHistoryItemClick from '../HistoryItem/handleHistoryItemClick';
 
 const Game = (props) => {
     // State management
-    const [history, setHistory] = useState([{squares: Array(9).fill(null), moves: []}]);
-    const [stepNumber, setStepNumber] = useState(0);
+    const [history, setHistory] = useState(
+        [
+            {
+                squares: Array(9).fill(null),
+                moves: [],
+            }
+        ]
+    );
+    const [stepNumber, setStepNumber] = useState(0); // Index of current history object
     const [xIsNext, setXIsNext] = useState(true);
     // ES6 Prop Shorthand
     const gameState = {
@@ -43,6 +50,7 @@ const Game = (props) => {
             <div className="game-info">
                 <History
                     history={history}
+                    stepNumber={stepNumber}
                     onClick={(i) => handleHistoryItemClick(setStepNumber, setXIsNext, i)}
                 />
             </div>
